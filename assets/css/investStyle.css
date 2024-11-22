@@ -1,0 +1,157 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.invest {
+  width: 100%;
+  background-color: #f8f9fa;
+  height: auto;
+  display: flex;
+  border-radius: 30px;
+}
+.invest .left {
+  width: 400px;
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.invest .left h3 {
+  width: 100%;
+  margin-top: 20px;
+  margin-left: 20px;
+  color: rgb(79, 32, 13);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+}
+.invest .left h3 img {
+  width: 20%;
+  object-fit: contain;
+}
+.invest .left .container {
+  position: relative;
+  bottom: 32%;
+  margin-left: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.invest .left .container a {
+  width: 100%;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  color: grey;
+  font-size: 20px;
+}
+.invest .left .container .dash {
+  background-color: #fff;
+  width: 180px;
+  color: rgb(1, 1, 1);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  border-radius: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.invest .left .container .dash .fa-dollar-sign {
+  background-color: rgb(181, 9, 161);
+  color: white;
+}
+.invest .left .container a .fa-solid {
+  margin-right: 20px;
+  background-color: #fff;
+  padding-top: 10px;
+  color: rgb(181, 9, 161);
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+}
+.invest .body {
+  width: 1200px;
+  height: auto;
+}
+.invest .body .header {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.invest .body .header .left {
+  margin-left: 10px;
+  margin-top: 40px;
+}
+.invest .body .header .left h2 {
+  width: 100%;
+  margin-left: 30px;
+  color: rgb(181, 9, 161);
+}
+.invest .body .header .right {
+  margin-right: 5%;
+  margin-top: 40px;
+}
+.invest .body .header .right .search {
+  width: 230px;
+  height: 39px;
+  border-radius: 15px;
+  background-color: #fff;
+  color: rgb(1, 1, 1);
+  padding-left: 30px;
+  border: 5px grey;
+}
+.invest .body .header .right .bi-search {
+  position: relative;
+  right: 220px;
+}
+.invest .body .header .right a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: gray;
+}
+.invest .body .header .right .fa-gear {
+  margin-right: 20px;
+}
+.invest .main {
+  width: 100%;
+  height: 400px;
+  background-color: #fff;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.invest .main .users {
+  border-collapse: collapse;
+  width: 95%;
+  font-size: 15px;
+}
+.invest .main .users thead tr {
+  background-color: rgb(181, 9, 161);
+  color: white;
+  text-align: left;
+  font-weight: bold;
+}
+.invest .main .users thead tr th {
+  padding: 12px 15px;
+}
+.invest .main .users tbody tr td {
+  padding: 12px 15px;
+}
+.invest .main .users tbody tr {
+  border-bottom: 1px solid #ddd;
+  color: green;
+  font-weight: bold;
+}
+.invest .main .users tbody .active {
+  background-color: rgb(200, 238, 225);
+  font-weight: lighter;
+  color: #fff;
+}
+.invest .main .users tbody .inactive {
+  color: red;
+  font-weight: lighter;
+}
