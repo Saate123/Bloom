@@ -37,6 +37,7 @@
   width: 65%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .login .header .free {
   margin-right: 20px;
@@ -111,10 +112,24 @@
   border-radius: 10px;
 }
 .login .parent .left form .note {
-  margin-bottom: 30px;
-  color: rgb(21, 25, 41);
-  font-size: 16px;
-  font-weight: bold;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.login .parent .left form .note p {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  padding-bottom: 20px;
+  color: gray;
+}
+
+.login .parent .left form .note #check {
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
 }
 .login .parent .left form button {
   width: 55%;

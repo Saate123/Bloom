@@ -11,7 +11,7 @@
   border-radius: 30px;
 }
 .dashboard .left {
-  width: 300px;
+  width: 400px;
   height: 800px;
   display: flex;
   justify-content: center;
@@ -20,10 +20,10 @@
 .dashboard .left h3 {
   width: 100%;
   margin-top: 30px;
-  margin-left: 40px;
+  margin-left: 20px;
   color: rgb(1, 1, 1);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 22px;
+  font-size: 20px;
   text-decoration: underline rgb(241, 221, 240);
   text-underline-offset: 20px;
 }
@@ -44,7 +44,7 @@
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
   color: grey;
-  font-size: 20px;
+  font-size: 18px;
 }
 .dashboard .left .container .dash {
   background-color: #fff;
@@ -83,7 +83,7 @@
   border-radius: 20px;
 }
 .dashboard .body {
-  width: 1500px;
+  width: 1400px;
   height: auto;
 }
 .dashboard .body .header {
@@ -101,6 +101,7 @@
   width: 100%;
   margin-left: 30px;
   color: gray;
+  font-size: 15px;
 }
 .dashboard .body .header .left p span {
   color: rgb(1, 1, 1);
@@ -160,8 +161,8 @@
 }
 .dashboard .body .main .number .fa-seedling {
   position: relative;
-  top: 10px;
-  margin-left: 37%;
+  top: -30px;
+  margin-left: 80%;
   background-color: rgb(181, 9, 161);
   padding-top: 10px;
   color: #fff;
@@ -171,11 +172,15 @@
   border-radius: 10px;
 }
 .dashboard .body .main .number h3 {
+  position: relative;
   margin-left: 10%;
   color: rgb(1, 1, 1);
+  font-size: 25px;
+  font-weight: 700;
+  bottom: 50px;
 }
 .dashboard .body .main .number h3 span {
-  font-size: 15px;
+  font-size: 13px;
   color: limegreen;
 }
 .dashboard .body .main .user {
@@ -186,8 +191,8 @@
 }
 .dashboard .body .main .user .fa-globe {
   position: relative;
-  top: 10px;
-  margin-left: 72%;
+  top: -30px;
+  margin-left: 80%;
   background-color: rgb(181, 9, 161);
   padding-top: 10px;
   color: #fff;
@@ -197,11 +202,15 @@
   border-radius: 10px;
 }
 .dashboard .body .main .user h3 {
+  position: relative;
+  font-size: 25px;
+  font-weight: 700;
+  bottom: 50px;
   margin-left: 10%;
   color: rgb(1, 1, 1);
 }
 .dashboard .body .main .user h3 span {
-  font-size: 15px;
+  font-size: 13px;
   color: limegreen;
 }
 .dashboard .body .main .user p {
@@ -220,15 +229,16 @@
 }
 .dashboard .body .main .plan .fa-clipboard-list {
   position: relative;
-  top: 10px;
-  margin-left: 50%;
+  top: -30px;
+  margin-left: 80%;
   background-color: rgb(181, 9, 161);
-  padding-top: 10px;
+  padding-top: 8px;
   color: #fff;
-  padding-bottom: 10px;
+  padding-bottom: 8px;
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 10px;
+  margin-bottom: 4px;
 }
 .dashboard .body .main .plan p {
   margin-top: 10px;
@@ -241,6 +251,8 @@
   margin-left: 10%;
 }
 .dashboard .body .main .plan button {
+  position: relative;
+  bottom: 45px;
   margin-right: 10px;
   height: 22px;
   width: 70px;
@@ -250,8 +262,9 @@
   background-color: rgb(181, 9, 161);
 }
 .dashboard .body .box {
+  position: relative;
   width: 95%;
-  height: auto;
+  height: 400px;
   background-color: #fff;
   border-radius: 20px;
   margin-top: 20px;
@@ -261,44 +274,38 @@
   flex-wrap: wrap;
 }
 .dashboard .body .box .small-box {
-  width: 30%;
-  height: 350px;
-  margin-left: 70%;
-  margin-top: 0px;
+  position: absolute;
+  width: 35%;
+  height: 100%;
+  margin-left: 65%;
   background-color: rgb(181, 9, 161);
   border-radius: 15px;
 }
 .dashboard .body .box h1 {
   color: #fff;
-  margin-left: 40%;
-  padding-top: 40%;
+  margin-left: 27%;
+  padding-top: 50%;
 }
 .dashboard .body .project {
-  width: 95%;
-  height: 500px;
-  margin-left: 30px;
-  padding-bottom: 30px;
-  border-radius: 10px;
-  margin-bottom: 40px;
+  margin-left: 20px;
   background-color: #fff;
-  display: flex;
-  flex-wrap: wrap;
 }
 .dashboard .body .project h2 {
-  width: 100%;
-  margin-top: 5%;
+  padding-left: 5%;
+  padding-top: 3%;
+  padding-bottom: 20px;
   color: rgb(181, 9, 161);
-  margin-left: 40px;
-  font-size: 30px;
 }
 .dashboard .body .project .project-tab {
   border-collapse: collapse;
   width: 95%;
   font-size: 15px;
-  border-radius: 5px 5px 0 0;
   margin-left: 30px;
   background-color: #fff;
-  box-shadow: rgb(241, 221, 240);
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(168, 143, 143, 0.15);
+  margin-bottom: 30px;
 }
 .dashboard .body .project .project-tab thead tr {
   background-color: rgb(181, 9, 161);
@@ -306,11 +313,15 @@
   text-align: left;
   font-weight: bold;
 }
-.dashboard .body .project .project-tab thead tr th {
+.dashboard .body .project table thead tr th {
   padding: 12px 15px;
 }
-.dashboard .body .project .project-tab tbody tr th {
+.dashboard .body .project table tbody tr td {
   padding: 12px 15px;
+}
+.dashboard .body .project table tbody tr td a {
+  text-decoration: none;
+  color: black;
 }
 .dashboard .body .project .project-tab tbody tr {
   border-bottom: 1px solid #ddd;
@@ -323,4 +334,42 @@
 }
 .dashboard .body .project .project-tab tbody tr:last-of-type {
   border-bottom: 3px solid rgb(181, 9, 161);
+}
+
+.dashboard .body .card-container {
+  position: absolute;
+  bottom: -30%;
+  left: 40%;
+  width: 30%;
+  height: auto;
+  background-color: rgb(252, 212, 252);
+  border-radius: 20px;
+}
+#userCard {
+  display: none;
+}
+.dashboard .body .card-container .card-header {
+  background-color: rgb(181, 9, 161);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  color: white;
+  height: 50px;
+}
+.dashboard .body .card-container .card-header h3 {
+  margin-left: 35%;
+  font-size: 30px;
+}
+.dashboard .body .card-container .card-content {
+  line-height: 40px;
+  margin-left: 20px;
+}
+.dashboard .body .card-container .card-content button {
+  width: 30%;
+  height: 35px;
+  background-color: blue;
+  color: white;
+  margin-bottom: 20px;
+  margin-left: 30%;
+  border: none;
+  border-radius: 15px;
 }

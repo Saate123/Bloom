@@ -22,22 +22,35 @@
         <div class="second">
           <a href=""><i class="fa-solid fa-house"></i>DASHBOARD</a>
           <a href=""><i class="bi bi-person-fill"></i>PROFILE</a>
-          <a href=""><i class="bi bi-person-circle"></i>SIGN UP</a>
-          <a href="Signin.html"><i class="fa-solid fa-key"></i>SIGN IN</a>
+          <a href="Signin.html"><i class="bi bi-person-circle"></i>SIGN UP</a>
+          <a href=""><i class="fa-solid fa-key"></i>SIGN IN</a>
           <button class="free">Free Download</button>
         </div>
       </div>
       <div class="parent">
-        <div class="left">
+        <div class="left" id="form-container">
           <h3>Welcome Back</h3>
           <p class="enter">Enter your email and password to sign in</p>
-          <form action="click">
+          <form id="sign-inPage">
             <label for="email">Email</label><br />
-            <input type="text" placeholder="Your email address" /><br />
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="Enter your email address"
+            /><br />
             <label for="password">Password</label><br />
-            <input type="text" placeholder="Your password" />
-            <p class="note">Remember me</p>
-            <button>SIGN IN</button>
+            <input
+              type="text"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+            />
+            <div class="note">
+              <input type="checkbox" name="" id="check" />
+              <p>Remember me</p>
+            </div>
+            <button type="submit">SIGN IN</button>
           </form>
           <p class="sign">
             Don't have an account? <a href="Signin.html">Sign Up</a>
@@ -49,6 +62,19 @@
           </div>
         </div>
       </div>
+      <script>
+        const form = document.getElementById("sign-inPage");
+        const formholder = document.getElementById("formcontainer");
+        const displayEmail = document.getElementById("displayEmail");
+        const displayPassword = document.getElementById("displayPassword");
+
+        form.addEventListener("submit", async (event) => {
+          event.preventDefault();
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+          location.replace("index.html");
+        });
+      </script>
     </section>
   </body>
 </html>

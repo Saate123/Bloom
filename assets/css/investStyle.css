@@ -118,7 +118,6 @@
 .invest .main {
   width: 100%;
   height: 400px;
-  background-color: #fff;
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -128,6 +127,9 @@
   border-collapse: collapse;
   width: 95%;
   font-size: 15px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 .invest .main .users thead tr {
   background-color: rgb(181, 9, 161);
@@ -147,9 +149,8 @@
   font-weight: bold;
 }
 .invest .main .users tbody .active {
-  background-color: rgb(200, 238, 225);
   font-weight: lighter;
-  color: #fff;
+  color: blue;
 }
 .invest .main .users tbody .inactive {
   color: red;
