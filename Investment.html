@@ -12,35 +12,84 @@
       href="assets/lib/fontawesome-free-6.6.0-web/css/all.css"
     />
     <title>Investment</title>
+    <style>
+      .card {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        text-align: center;
+        border-radius: 8px;
+      }
+      .card h2 {
+        margin-bottom: 10px;
+        height: 40px;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        font-size: 18px;
+        color: white;
+        width: 100%;
+        background-color: gray;
+      }
+      .card p {
+        line-height: 30px;
+        font-size: 15px;
+      }
+      .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+      }
+      .card button {
+        margin-top: 10px;
+        width: 30%;
+        border: none;
+        height: 35px;
+        color: #fff;
+        background-color: black;
+      }
+    </style>
   </head>
   <body>
     <section class="invest">
       <div class="left">
-        <h3><img src="assets/images/bloom.png" alt="" />BloomPay Dashboard</h3>
+        <div class="image">
+          <img src="assets/images/bloom.png" alt="" />
+        </div>
         <div class="container">
           <a href="index.html"><i class="fa-solid fa-house"></i> Dashboard</a>
           <a href="users.html"><i class="fa-solid fa-users"></i> Users</a>
           <a href="" class="dash"
             ><i class="fa-solid fa-dollar-sign"></i>Investment</a
           >
-          <a href=""><i class="fa-solid fa-envelope"></i>Notification</a>
+          <a href="dialogue.html"
+            ><i class="fa-solid fa-envelope"></i>Notification</a
+          >
         </div>
       </div>
       <div class="body">
         <div class="header">
-          <div class="left">
-            <h2><i class="fa-solid fa-dollar-sign"></i> Investment</h2>
-          </div>
           <div class="right">
             <input type="text" placeholder=" Type here.... " class="search" />
             <i class="bi bi-search"></i>
-            <a href="Login.html"><i class="bi bi-person-fill"></i> Sign In</a>
+            <a href="Login.html"><i class="bi bi-person-fill"></i> Sign Out</a>
             <i class="fa-solid fa-gear"></i>
             <i class="fa-solid fa-bell"></i>
           </div>
         </div>
         <div class="main">
-          <table class="users">
+          <table class="users" id="myTable">
             <thead>
               <tr>
                 <th>S/N</th>
@@ -53,71 +102,128 @@
                 <th>Status</th>
               </tr>
             </thead>
-            <tbody>
-              <tr class="active">
-                <td>1</td>
-                <td>Echindo</td>
-                <td>12th Oct., 2024</td>
-                <td>1st Nov., 2024</td>
-                <td>30th Nov., 2024</td>
-                <td>Parent</td>
-                <td>#200,000</td>
-                <td>Ongoing</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Echindo</td>
-                <td>12th Oct., 2024</td>
-                <td>1st Nov., 2024</td>
-                <td>30th Nov., 2024</td>
-                <td>Youth</td>
-                <td>#150,000</td>
-                <td>Completed</td>
-              </tr>
-              <tr class="inactive">
-                <td>3</td>
-                <td>Echindo</td>
-                <td>12th Oct., 2024</td>
-                <td>1st Nov., 2024</td>
-                <td>30th Nov., 2024</td>
-                <td>Children</td>
-                <td>#100,000</td>
-                <td>Pending</td>
-              </tr>
-              <tr class="active">
-                <td>4</td>
-                <td>Echindo</td>
-                <td>12th Oct., 2024</td>
-                <td>1st Nov., 2024</td>
-                <td>30th Nov., 2024</td>
-                <td>Parent</td>
-                <td>#200,000</td>
-                <td>Ongoing</td>
-              </tr>
-              <tr class="inactive">
-                <td>5</td>
-                <td>Echindo</td>
-                <td>12th Oct., 2024</td>
-                <td>1st Nov., 2024</td>
-                <td>30th Nov., 2024</td>
-                <td>Youth</td>
-                <td>#150,000</td>
-                <td>Pending</td>
-              </tr>
-              <tr>
-                <td>6</td>
-                <td>Echindo</td>
-                <td>12th Oct., 2024</td>
-                <td>1st Nov., 2024</td>
-                <td>30th Nov., 2024</td>
-                <td>Parent</td>
-                <td>#200,000</td>
-                <td>Completed</td>
-              </tr>
-            </tbody>
+            <tbody></tbody>
           </table>
+        </div>
+        <div class="overlay" id="overlay"></div>
+        <div class="card" id="card">
+          <h2 id="cardTitle">Details</h2>
+          <p id="cardContent"></p>
+          <button onclick="closeCard()">Close</button>
         </div>
       </div>
     </section>
+    <script>
+      const data = [
+        {
+          sn: "1",
+          username: "Echindo",
+          investment: "12th Oct., 2024",
+          start: "1st Nov., 2024",
+          end: "30th Nov., 2024",
+          type: "Parent",
+          cost: "$3,000",
+          status: "Ongoing",
+        },
+        {
+          sn: "2",
+          username: "Echindo",
+          investment: "12th Oct., 2024",
+          start: "1st Nov., 2024",
+          end: "30th Nov., 2024",
+          type: "Youth",
+          cost: "$2,000",
+          status: "Ongoing",
+        },
+        {
+          sn: "3",
+          username: "Echindo",
+          investment: "12th Oct., 2024",
+          start: "1st Nov., 2024",
+          end: "30th Nov., 2024",
+          type: "Child",
+          cost: "$1,500",
+          status: "Ongoing",
+        },
+        {
+          sn: "4",
+          username: "Echindo",
+          investment: "12th Oct., 2024",
+          start: "1st Nov., 2024",
+          end: "30th Nov., 2024",
+          type: "Parent",
+          cost: "$3,000",
+          status: "Ongoing",
+        },
+        {
+          sn: "5",
+          username: "Echindo",
+          investment: "12th Oct., 2024",
+          start: "1st Nov., 2024",
+          end: "30th Nov., 2024",
+          type: "Youth",
+          cost: "$2,000",
+          status: "Pending",
+        },
+        {
+          sn: "6",
+          username: "Echindo",
+          investment: "12th Oct., 2024",
+          start: "1st Nov., 2024",
+          end: "30th Nov., 2024",
+          type: "Parent",
+          cost: "$3,000",
+          status: "Completed",
+        },
+      ];
+
+      // Reference to the table body and card elements
+      const tableBody = document.querySelector("#myTable tbody");
+      const card = document.getElementById("card");
+      const overlay = document.getElementById("overlay");
+      const cardTitle = document.getElementById("cardTitle");
+      const cardContent = document.getElementById("cardContent");
+
+      // Function to populate the table with rows
+      function populateTable(data) {
+        data.forEach((item, index) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+                    <td>${item.sn}</td>
+                    <td><a href="#" onclick="openModal(${data})" style="color: black; text-decoration: none;">${item.username}</td>
+                    <td>${item.investment}</td>
+                    <td>${item.start}</td>
+                    <td>${item.end}</td>
+                    <td>${item.type}</td>
+                    <td>${item.cost}</td>
+                    <td>${item.status}</td>
+      `;
+          row.addEventListener("click", () => showCard(item)); // Add click event listener
+          tableBody.appendChild(row);
+        });
+      }
+
+      // Function to show the card with details
+      function showCard(data) {
+        cardTitle.textContent = data.username;
+        cardContent.innerHTML = `
+  <div class="card-item">Investment Date: ${data.investment}</div>
+  <div class="card-item">Start Date: ${data.start}</div>
+  <div class="card-item">End Date: ${data.end}</div>
+  <div class="card-item">Investment Type: ${data.type}</div>
+  <div class="card-item">Cost: ${data.cost}</div>
+  <div class="card-item">Status: ${data.status}</div>
+`;
+        card.style.display = "block";
+        overlay.style.display = "block";
+      }
+
+      function closeCard() {
+        card.style.display = "none";
+        overlay.style.display = "none";
+      }
+
+      populateTable(data);
+    </script>
   </body>
 </html>

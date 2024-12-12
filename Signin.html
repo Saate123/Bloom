@@ -35,22 +35,28 @@
             <p>and achieve your Real Estate Investment dreams.</p>
           </div>
         </div>
-        <div class="midd">
+        <div class="midd" id="formContainer">
           <p class="reg">Register</p>
-          <form action="">
+          <form id="signupPage">
             <label for="">Name</label><br />
-            <input type="text" placeholder="Type your full name" /><br />
+            <input
+              type="text"
+              id="name"
+              placeholder="Type your full name"
+            /><br />
             <label for="">Email</label><br />
-            <input type="text" placeholder="Type your email" /><br />
+            <input type="text" id="email" placeholder="Type your email" /><br />
             <label for="">Password</label><br />
-            <input type="text" placeholder="Type your password" /><br />
-            <label for="">Confirm Password</label><br />
-            <input type="text" placeholder="Type your password" />
+            <input
+              type="text"
+              id="passsword"
+              placeholder="Type your password"
+            /><br />
             <div class="note">
               <input type="checkbox" name="" id="check" />
               <p>Remember me</p>
             </div>
-            <button>Sign Up</button>
+            <button type="submit">Sign Up</button>
             <p class="have">
               Already have an account?<a href="Login.html">Signin</a>
             </p>
@@ -61,5 +67,30 @@
         <p>@2024</p>
       </div>
     </section>
+    <script>
+      const form = document.getElementById("signupPage");
+      const displayName = document.getElementById("name");
+      const displayEmail = document.getElementById("email");
+      const displayPassword = document.getElementById("passsword");
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const name = displayName.value;
+        const email = displayEmail.value;
+        const password = displayPassword.value;
+
+        // Add your logic here to handle the form data
+        console.log("Form submitted:", name, email, password);
+
+        // Redirect to the next page
+        // location.replace("index.html");
+        if (!name || !email || !password) {
+          alert("Please enter your name, email and password.");
+          return false;
+        } else {
+          location.replace("index.html");
+        }
+      });
+    </script>
   </body>
 </html>

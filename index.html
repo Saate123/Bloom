@@ -12,8 +12,8 @@
       href="assets/lib/fontawesome-free-6.6.0-web/css/all.css"
     />
     <link rel="stylesheet" href="assets/css/dashStyle.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-    <script src="https://ajax.googlapis.com/ajax/libs/jquery/3.3.1/jquery.mim.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <!-- <script src="https://ajax.googlapis.com/ajax/libs/jquery/3.3.1/jquery.mim.js"></script> -->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -38,8 +38,16 @@
       }
       .card h2 {
         margin-top: 0;
+        height: 60px;
+        margin-bottom: 10px;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        font-size: 18px;
         width: 100%;
-        background-color: rgb(236, 204, 233);
+        background-color: gray;
+      }
+      .card p {
+        line-height: 30px;
       }
       .overlay {
         display: none;
@@ -52,17 +60,21 @@
         z-index: 999;
       }
       .card button {
+        margin-top: 10px;
         width: 30%;
         border: none;
         height: 35px;
-        background-color: rgb(181, 9, 161);
+        color: #fff;
+        background-color: black;
       }
     </style>
   </head>
   <body>
     <section class="dashboard">
       <div class="left">
-        <h3><img src="assets/images/bloom.png" alt="" />BloomPay Dashboard</h3>
+        <div class="image">
+          <img src="assets/images/bloom.png" alt="" />
+        </div>
         <div class="container">
           <a href="" class="dash"
             ><i class="fa-solid fa-house"></i> Dashboard</a
@@ -71,19 +83,20 @@
           <a href="Investment.html"
             ><i class="fa-solid fa-dollar-sign"></i>Investment</a
           >
-          <a href=""><i class="fa-solid fa-envelope"></i>Notification</a>
+          <a href="dialogue.html"
+            ><i class="fa-solid fa-envelope"></i>Notification</a
+          >
         </div>
       </div>
       <div class="body">
         <div class="header">
-          <div class="left">
+          <div class="first">
             <p>Pages / <span>Dashboard</span></p>
-            <h4>DASHBOARD</h4>
           </div>
           <div class="right">
             <input type="text" placeholder=" Type here.... " class="search" />
             <i class="bi bi-search"></i>
-            <a href="Login.html"><i class="bi bi-person-fill"></i> Sign In</a>
+            <a href="Login.html"><i class="bi bi-person-fill"></i> Sign Out</a>
             <i class="fa-solid fa-gear"></i>
             <i class="fa-solid fa-bell"></i>
           </div>
@@ -105,16 +118,12 @@
           </div>
         </div>
         <div class="box">
-          <canvas
-            id="myChart"
-            style="
-              width: 5%;
-              max-width: 600px;
-              margin-top: 30px;
-              margin-left: 20px;
-              height: 7%;
-            "
-          ></canvas>
+          <div class="small-box1">
+            <div
+              id="myChart"
+              style="width: 100%; max-width: 600px; height: 400px"
+            ></div>
+          </div>
           <div class="small-box">
             <h1>BLOOMPAY</h1>
           </div>
@@ -124,7 +133,7 @@
           <table id="dataTable" class="project-tab">
             <thead>
               <tr>
-                <th onclick="show()">S/N</th>
+                <th>S/N</th>
                 <th>Name</th>
                 <th>Date</th>
                 <th>Active Investors</th>
@@ -145,48 +154,35 @@
           </div>
         </div>
       </div>
-      <script>
-        const xValues = [
-          "Year",
-          "Jan",
-          "Feb",
-          "Mar",
-          "Apr",
-          "May",
-          "Jun",
-          "Jul",
-        ];
-        const yValues = [0, 30, 45, 40, 65, 70, 50, 60];
-        const barColors = [
-          "blue",
-          "blue",
-          "blue",
-          "blue",
-          "blue",
-          "blue",
-          "blue",
-          "blue",
-        ];
 
-        new Chart("myChart", {
-          type: "bar",
-          data: {
-            labels: xValues,
-            datasets: [
-              {
-                backgroundColor: barColors,
-                data: yValues,
-              },
-            ],
-          },
-          options: {
-            legend: { display: false },
-            title: {
-              display: true,
-              text: "Investment Percentage for 2024",
-            },
-          },
-        });
+      <script>
+        google.charts.load("current", { packages: ["corechart"] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+          // Set Data - Months are now strings representing the month names
+          const data = google.visualization.arrayToDataTable([
+            ["Month", "Percentage"],
+            ["Jan", 55],
+            ["Feb", 49],
+            ["Mar", 44],
+            ["Apr", 60],
+            ["May", 65],
+            ["Jun", 70],
+            ["Jul", 60],
+          ]);
+
+          // Set Options
+          const options = {
+            title: "Monthly Investment Percentage",
+          };
+
+          // Draw
+          const chart = new google.visualization.BarChart(
+            document.getElementById("myChart")
+          );
+          chart.draw(data, options);
+        }
 
         const data = [
           {
@@ -228,7 +224,7 @@
             const row = document.createElement("tr");
             row.innerHTML = `
               <td>${item.sn}</td>
-              <td>${item.name}</td>
+              <td><a href="#" onclick="openModal(${data})" style="color: black; text-decoration: none;">${item.name}</td>
               <td>${item.date}</td>
               <td>${item.active}</td>
               <td>${item.amount}</td>

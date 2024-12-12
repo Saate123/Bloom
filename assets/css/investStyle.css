@@ -11,22 +11,21 @@
   border-radius: 30px;
 }
 .invest .left {
-  width: 400px;
+  width: 300px;
   height: 800px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(168, 143, 143, 0.15);
 }
-.invest .left h3 {
-  width: 100%;
-  margin-top: 20px;
-  margin-left: 20px;
-  color: rgb(79, 32, 13);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 22px;
+.invest .left .image {
+  margin-top: 30px;
+  width: 50%;
+  height: 50px;
 }
-.invest .left h3 img {
-  width: 20%;
+.invest .left .image img {
+  width: 50%;
   object-fit: contain;
 }
 .invest .left .container {
@@ -42,10 +41,10 @@
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
   color: grey;
-  font-size: 20px;
+  font-size: 15px;
 }
 .invest .left .container .dash {
-  background-color: #fff;
+  background-color: lightgrey;
   width: 180px;
   color: rgb(1, 1, 1);
   font-family: Arial, Helvetica, sans-serif;
@@ -57,14 +56,14 @@
   padding-right: 8px;
 }
 .invest .left .container .dash .fa-dollar-sign {
-  background-color: rgb(181, 9, 161);
+  background-color: black;
   color: white;
 }
 .invest .left .container a .fa-solid {
   margin-right: 20px;
   background-color: #fff;
   padding-top: 10px;
-  color: rgb(181, 9, 161);
+  color: black;
   padding-bottom: 10px;
   padding-left: 10px;
   padding-right: 10px;
@@ -73,6 +72,10 @@
 .invest .body {
   width: 1200px;
   height: auto;
+}
+.invest .body .header .right {
+  margin-left: 30%;
+  margin-top: 50px;
 }
 .invest .body .header {
   width: 100%;
@@ -88,14 +91,14 @@
 .invest .body .header .left h2 {
   width: 100%;
   margin-left: 30px;
-  color: rgb(181, 9, 161);
+  color: black;
 }
 .invest .body .header .right {
   margin-right: 5%;
   margin-top: 40px;
 }
 .invest .body .header .right .search {
-  width: 230px;
+  width: 350px;
   height: 39px;
   border-radius: 15px;
   background-color: #fff;
@@ -105,10 +108,12 @@
 }
 .invest .body .header .right .bi-search {
   position: relative;
-  right: 220px;
+  right: 340px;
 }
 .invest .body .header .right a {
   margin-right: 20px;
+  font-size: 13px;
+  font-weight: 800;
   text-decoration: none;
   color: gray;
 }
@@ -132,7 +137,7 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 .invest .main .users thead tr {
-  background-color: rgb(181, 9, 161);
+  background-color: black;
   color: white;
   text-align: left;
   font-weight: bold;
@@ -142,17 +147,70 @@
 }
 .invest .main .users tbody tr td {
   padding: 12px 15px;
+  font-size: 15px;
+  font-weight: lighter;
+}
+.invest .main .users tbody tr td a {
+  font-weight: bold;
 }
 .invest .main .users tbody tr {
   border-bottom: 1px solid #ddd;
   color: green;
-  font-weight: bold;
-}
-.invest .main .users tbody .active {
-  font-weight: lighter;
-  color: blue;
 }
 .invest .main .users tbody .inactive {
   color: red;
   font-weight: lighter;
+}
+.invest .main .users tbody tr:last-of-type {
+  border-bottom: 3px solid black;
+}
+
+@media only screen and (max-width: 768px) {
+  .invest {
+    flex-direction: column;
+  }
+  .invest .left {
+    width: 100%;
+    height: auto;
+  }
+  .invest .left a {
+    margin-bottom: 20px;
+  }
+  .invest .left h3 {
+    margin-bottom: 20px;
+  }
+  .invest .body {
+    width: 100%;
+    height: auto;
+  }
+  .invest .body .header {
+    flex-direction: column;
+  }
+  .invest .body .header .left {
+    width: 30%;
+    margin-left: 0;
+  }
+  .user .body .header .right {
+    margin-right: 0;
+  }
+  .invest .main {
+    flex-direction: column;
+    margin-top: 40px;
+  }
+
+  .invest .main .users {
+    width: 100%;
+    margin: 10px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .card {
+    width: 80%;
+  }
+  .card .cardTitle {
+    height: 80px;
+  }
+  .card button {
+    width: 80%;
+  }
 }

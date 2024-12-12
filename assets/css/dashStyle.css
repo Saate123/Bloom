@@ -11,30 +11,27 @@
   border-radius: 30px;
 }
 .dashboard .left {
-  width: 400px;
+  width: 300px;
   height: 800px;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(168, 143, 143, 0.15);
 }
-.dashboard .left h3 {
-  width: 100%;
+.dashboard .left .image {
   margin-top: 30px;
-  margin-left: 20px;
-  color: rgb(1, 1, 1);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  text-decoration: underline rgb(241, 221, 240);
-  text-underline-offset: 20px;
+  width: 50%;
+  height: 50px;
 }
-.dashboard .left h3 img {
-  width: 20%;
+.dashboard .left .image img {
+  width: 50%;
   object-fit: contain;
 }
 .dashboard .left .container {
   position: relative;
   bottom: 32%;
-  margin-left: 40px;
+  margin-left: 20px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -44,10 +41,10 @@
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
   color: grey;
-  font-size: 18px;
+  font-size: 15px;
 }
 .dashboard .left .container .dash {
-  background-color: #fff;
+  background-color: lightgrey;
   width: 180px;
   color: rgb(1, 1, 1);
   font-family: Arial, Helvetica, sans-serif;
@@ -59,14 +56,14 @@
   padding-right: 8px;
 }
 .dashboard .left .container .dash .fa-house {
-  background-color: rgb(181, 9, 161);
+  background-color: black;
   color: white;
 }
 .dashboard .left .container a .fa-solid {
   margin-right: 20px;
   background-color: #fff;
   padding-top: 10px;
-  color: rgb(181, 9, 161);
+  color: black;
   padding-bottom: 10px;
   padding-left: 10px;
   padding-right: 10px;
@@ -76,7 +73,7 @@
   margin-right: 20px;
   background-color: #fff;
   padding-top: 10px;
-  color: rgb(181, 9, 161);
+  color: black;
   padding-bottom: 10px;
   padding-left: 15px;
   padding-right: 15px;
@@ -93,24 +90,19 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.dashboard .body .header .left {
+.dashboard .body .header .first {
   margin-left: 10px;
   margin-top: 40px;
 }
-.dashboard .body .header .left p {
+.dashboard .body .header .first p {
   width: 100%;
   margin-left: 30px;
   color: gray;
   font-size: 15px;
 }
-.dashboard .body .header .left p span {
+.dashboard .body .header .first p span {
   color: rgb(1, 1, 1);
-}
-.dashboard .body .header .left h4 {
-  position: relative;
-  font-size: 18px;
-  bottom: 46%;
-  right: 44px;
+  font-weight: 700;
 }
 .dashboard .body .header .right {
   margin-right: 5%;
@@ -147,7 +139,7 @@
 }
 .dashboard .body .main .number {
   background-color: #fff;
-  border-radius: 20px;
+  border-radius: 10px;
   width: 29%;
   height: 80px;
   margin-left: 30px;
@@ -156,14 +148,14 @@
   margin-top: 10px;
   margin-left: 10%;
   line-height: 30px;
-  font-size: 18px;
-  color: rgb(1, 1, 1);
+  font-size: 15px;
+  color: grey;
 }
 .dashboard .body .main .number .fa-seedling {
   position: relative;
   top: -30px;
   margin-left: 80%;
-  background-color: rgb(181, 9, 161);
+  background-color: black;
   padding-top: 10px;
   color: #fff;
   padding-bottom: 10px;
@@ -175,7 +167,7 @@
   position: relative;
   margin-left: 10%;
   color: rgb(1, 1, 1);
-  font-size: 25px;
+  font-size: 18px;
   font-weight: 700;
   bottom: 50px;
 }
@@ -185,7 +177,7 @@
 }
 .dashboard .body .main .user {
   background-color: #fff;
-  border-radius: 20px;
+  border-radius: 10px;
   width: 29%;
   height: 80px;
 }
@@ -193,7 +185,7 @@
   position: relative;
   top: -30px;
   margin-left: 80%;
-  background-color: rgb(181, 9, 161);
+  background-color: black;
   padding-top: 10px;
   color: #fff;
   padding-bottom: 10px;
@@ -203,7 +195,7 @@
 }
 .dashboard .body .main .user h3 {
   position: relative;
-  font-size: 25px;
+  font-size: 18px;
   font-weight: 700;
   bottom: 50px;
   margin-left: 10%;
@@ -217,12 +209,12 @@
   margin-top: 10px;
   margin-left: 10%;
   line-height: 30px;
-  font-size: 18px;
-  color: rgb(1, 1, 1);
+  font-size: 15px;
+  color: grey;
 }
 .dashboard .body .main .plan {
   background-color: #fff;
-  border-radius: 20px;
+  border-radius: 10px;
   width: 29%;
   height: 80px;
   margin-right: 20px;
@@ -231,7 +223,7 @@
   position: relative;
   top: -30px;
   margin-left: 80%;
-  background-color: rgb(181, 9, 161);
+  background-color: black;
   padding-top: 8px;
   color: #fff;
   padding-bottom: 8px;
@@ -244,8 +236,8 @@
   margin-top: 10px;
   margin-left: 10%;
   line-height: 30px;
-  font-size: 18px;
-  color: rgb(1, 1, 1);
+  font-size: 15px;
+  color: grey;
 }
 .dashboard .body .main .plan .child {
   margin-left: 10%;
@@ -258,8 +250,9 @@
   width: 70px;
   border-radius: 15px;
   border: none;
+  font-size: 15px;
   color: #fff;
-  background-color: rgb(181, 9, 161);
+  background-color: black;
 }
 .dashboard .body .box {
   position: relative;
@@ -273,12 +266,16 @@
   display: flex;
   flex-wrap: wrap;
 }
+.dashboard .body .box .small-box1 {
+  width: 60%;
+  height: 100%;
+}
 .dashboard .body .box .small-box {
   position: absolute;
   width: 35%;
   height: 100%;
   margin-left: 65%;
-  background-color: rgb(181, 9, 161);
+  background-color: black;
   border-radius: 15px;
 }
 .dashboard .body .box h1 {
@@ -293,8 +290,9 @@
 .dashboard .body .project h2 {
   padding-left: 5%;
   padding-top: 3%;
+  font-size: 18px;
   padding-bottom: 20px;
-  color: rgb(181, 9, 161);
+  color: black;
 }
 .dashboard .body .project .project-tab {
   border-collapse: collapse;
@@ -308,7 +306,7 @@
   margin-bottom: 30px;
 }
 .dashboard .body .project .project-tab thead tr {
-  background-color: rgb(181, 9, 161);
+  background-color: black;
   color: white;
   text-align: left;
   font-weight: bold;
@@ -328,48 +326,117 @@
 }
 .dashboard .body .project .project-tab tbody tr td {
   padding-left: 12px;
+  font-size: 13px;
+}
+.dashboard .body .project .project-tab tbody tr td a {
+  font-weight: bold;
 }
 .dashboard .body .project .project-tab tbody tr:nth-of-type(odd) {
-  background-color: rgb(252, 212, 252);
+  background-color: lightgray;
 }
 .dashboard .body .project .project-tab tbody tr:last-of-type {
-  border-bottom: 3px solid rgb(181, 9, 161);
+  border-bottom: 3px solid black;
 }
 
-.dashboard .body .card-container {
-  position: absolute;
-  bottom: -30%;
-  left: 40%;
-  width: 30%;
-  height: auto;
-  background-color: rgb(252, 212, 252);
-  border-radius: 20px;
+@media only screen and (max-width: 768px) {
+  .dashboard {
+    flex-direction: column;
+  }
+  .dashboard .left {
+    width: 100%;
+    height: auto;
+  }
+  .dashboard .left a {
+    margin-bottom: 10px;
+  }
+  .dashboard .body {
+    width: 100%;
+    height: auto;
+  }
+  .dashboard .body .header {
+    width: 100%;
+  }
+  .dashboard .body .header .left {
+    width: 30%;
+  }
+  .dashboard .body .header .left h4 {
+    top: -10px;
+    left: 20px;
+  }
+  .dashboard .body .main {
+    flex-direction: column;
+  }
+  .dashboard .body .main .number,
+  .dashboard .body .main .user,
+  .dashboard .body .main .plan {
+    width: 100%;
+    margin: 10px;
+  }
+  .dashboard .body .main .number .fa-seedling {
+    margin-top: 10px;
+  }
+  .dashboard .body .main .number h3 {
+    bottom: 60px;
+  }
+  .dashboard .body .main .user .fa-globe {
+    top: 10px;
+    right: 50px;
+  }
+  .dashboard .body .main .user h3 {
+    top: -20px;
+  }
+  .dashboard .body .box {
+    width: 100%;
+    height: 400px;
+    margin: 10px;
+  }
+  .dashboard .body .box .small-box1 {
+    width: 60%;
+  }
+  .dashboard .body .box .small-box {
+    width: 40%;
+  }
+  .dashboard .body .project {
+    margin: 10px;
+  }
+  .dashboard .body .project .project-tab {
+    width: 100%;
+    margin: 10px;
+  }
 }
-#userCard {
-  display: none;
-}
-.dashboard .body .card-container .card-header {
-  background-color: rgb(181, 9, 161);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  color: white;
-  height: 50px;
-}
-.dashboard .body .card-container .card-header h3 {
-  margin-left: 35%;
-  font-size: 30px;
-}
-.dashboard .body .card-container .card-content {
-  line-height: 40px;
-  margin-left: 20px;
-}
-.dashboard .body .card-container .card-content button {
-  width: 30%;
-  height: 35px;
-  background-color: blue;
-  color: white;
-  margin-bottom: 20px;
-  margin-left: 30%;
-  border: none;
-  border-radius: 15px;
+
+/* Media Query for Tablet Devices */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .dashboard {
+    flex-direction: row;
+  }
+  .dashboard .left {
+    width: 300px;
+    height: auto;
+  }
+  .dashboard .body {
+    width: 100%;
+    height: auto;
+  }
+  .dashboard .body .main {
+    flex-direction: row;
+  }
+  .dashboard .body .main .number,
+  .dashboard .body .main .user,
+  .dashboard .body .main .plan {
+    width: 30%;
+    margin: 10px;
+  }
+  .dashboard .body .box {
+    width: 100%;
+    height: auto;
+    margin: 10px;
+  }
+  .dashboard .body .project {
+    margin: 10px;
+  }
+  .dashboard .body .project .project-tab {
+    width: 100%;
+    margin: 10px;
+  }
 }

@@ -58,7 +58,7 @@
         </div>
         <div class="right">
           <div class="container">
-            <h1>BLOOM</h1>
+            <h1>BLOOMPAY</h1>
           </div>
         </div>
       </div>
@@ -72,7 +72,15 @@
           event.preventDefault();
           const email = document.getElementById("email").value;
           const password = document.getElementById("password").value;
-          location.replace("index.html");
+          // location.replace("index.html");
+
+          if (!email || !password) {
+            alert("Please enter both email and password.");
+            return false;
+          } else {
+            location.replace("index.html");
+          }
+          // location.replace("index.html");
         });
       </script>
     </section>

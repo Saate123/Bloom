@@ -165,3 +165,40 @@
   font-size: 35px;
   color: #fff;
 }
+
+/* Media Query for Mobile Devices */
+@media only screen and (max-width: 768px) {
+  .login {
+    flex-direction: column;
+  }
+  .login .header {
+    width: 100%;
+    margin-left: 0;
+  }
+  .login .header .first {
+    margin-left: 0px;
+    width: 20%;
+  }
+  .login .header .second {
+    margin-right: 0px;
+    width: 70%;
+  }
+  .login .parent {
+    display: flex;
+    flex-wrap: wrap-reverse;
+  }
+  .login .parent .left {
+    width: 100%;
+    height: auto;
+  }
+  .login .parent .right {
+    width: 100%;
+    height: 200px;
+    background-image: linear-gradient(
+      to right,
+      rgb(224, 92, 218),
+      rgb(187, 0, 178),
+      rgb(181, 9, 161)
+    );
+  }
+}

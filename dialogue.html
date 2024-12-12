@@ -26,24 +26,21 @@
         border-radius: 30px;
       }
       .dashboard .left {
-        width: 400px;
+        width: 300px;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(48, 47, 47, 0.15);
         height: 800px;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
       }
-      .dashboard .left h3 {
-        width: 100%;
+      .dashboard .left .image {
         margin-top: 30px;
-        margin-left: 20px;
-        color: rgb(1, 1, 1);
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 20px;
-        text-decoration: underline rgb(241, 221, 240);
-        text-underline-offset: 20px;
+        width: 50%;
+        height: 50px;
       }
-      .dashboard .left h3 img {
-        width: 20%;
+      .dashboard .left .image img {
+        width: 50%;
         object-fit: contain;
       }
       .dashboard .left .container {
@@ -59,10 +56,10 @@
         text-decoration: none;
         font-family: Arial, Helvetica, sans-serif;
         color: grey;
-        font-size: 18px;
+        font-size: 15px;
       }
       .dashboard .left .container .dash {
-        background-color: #fff;
+        background-color: lightgrey;
         width: 180px;
         color: rgb(1, 1, 1);
         font-family: Arial, Helvetica, sans-serif;
@@ -73,15 +70,15 @@
         padding-left: 8px;
         padding-right: 8px;
       }
-      .dashboard .left .container .dash .fa-house {
-        background-color: rgb(181, 9, 161);
+      .dashboard .left .container .dash .fa-envelope {
+        background-color: black;
         color: white;
       }
       .dashboard .left .container a .fa-solid {
         margin-right: 20px;
         background-color: #fff;
         padding-top: 10px;
-        color: rgb(181, 9, 161);
+        color: black;
         padding-bottom: 10px;
         padding-left: 10px;
         padding-right: 10px;
@@ -91,14 +88,14 @@
         margin-right: 20px;
         background-color: #fff;
         padding-top: 10px;
-        color: rgb(181, 9, 161);
+        color: black;
         padding-bottom: 10px;
         padding-left: 15px;
         padding-right: 15px;
         border-radius: 20px;
       }
       .dashboard .body {
-        width: 1400px;
+        width: 1200px;
         height: auto;
       }
       .dashboard .body .header {
@@ -108,31 +105,12 @@
         flex-wrap: wrap;
         justify-content: space-between;
       }
-      .dashboard .body .header .left {
-        margin-left: 10px;
-        margin-top: 40px;
-      }
-      .dashboard .body .header .left p {
-        width: 100%;
-        margin-left: 30px;
-        color: gray;
-        font-size: 15px;
-      }
-      .dashboard .body .header .left p span {
-        color: rgb(1, 1, 1);
-      }
-      .dashboard .body .header .left h4 {
-        position: relative;
-        font-size: 18px;
-        bottom: 46%;
-        right: 44px;
-      }
       .dashboard .body .header .right {
-        margin-right: 5%;
         margin-top: 40px;
+        margin-left: 20%;
       }
       .dashboard .body .header .right .search {
-        width: 230px;
+        width: 350px;
         height: 39px;
         border-radius: 15px;
         background-color: #fff;
@@ -142,7 +120,7 @@
       }
       .dashboard .body .header .right .bi-search {
         position: relative;
-        right: 250px;
+        right: 240px;
       }
       .dashboard .body .header .right a {
         margin-right: 20px;
@@ -152,202 +130,309 @@
       .dashboard .body .header .right .fa-gear {
         margin-right: 20px;
       }
-      .dialogue-box {
-        display: none;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: #fff;
-        border: 1px solid #ddd;
-        padding: 20px;
-        width: 50%;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-      .dialogue-content {
-        text-align: center;
-      }
-      #close-dialogue-btn {
-        background-color: #333;
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-      }
-      #close-dialogue-btn:hover {
-        background-color: #555;
-      }
-
-      CSS (optional)
-          
-          
-          /* styles.css */
-          
-          #popup-container {
-        position: fixed;
-        top: 0;
-        left: 0;
+      .dashboard .body .main {
         width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        display: none;
       }
-
-      #popup-content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        display: none;
+      .dashboard .body .main .box1 {
+        width: 80%;
+        background-color: lightgray;
+        height: 100px;
+        margin-left: 10%;
+        margin-bottom: 10px;
+        box-shadow: 0 0 20px rgba(48, 47, 47, 0.15);
       }
-
-      #popup-title {
-        font-weight: bold;
+      .dashboard .body .main .box1 p {
+        padding-top: 20px;
+        margin-left: 10%;
+        font-size: 15px;
+      }
+      .dashboard .body .main .box1 button {
+        width: 100px;
+        margin-left: 10px;
+        height: 25px;
+        margin-left: 10%;
+        margin-top: 20px;
+        font-weight: bolder;
+        border: none;
+      }
+      .dashboard .body .main .box2 {
+        width: 80%;
+        margin-left: 10%;
+        background-color: lightgray;
+        height: 100px;
+        margin-bottom: 10px;
+        box-shadow: 0 0 20px rgba(48, 47, 47, 0.15);
+      }
+      .dashboard .body .main .box2 p {
+        padding-top: 20px;
+        margin-left: 10%;
+        font-size: 15px;
+      }
+      .dashboard .body .main .box2 button {
+        width: 100px;
+        margin-left: 10px;
+        height: 25px;
+        margin-left: 10%;
+        margin-top: 20px;
+        font-weight: bolder;
+        border: none;
+        color: black;
+      }
+      .dashboard .body .main .box2 button:hover {
+        background-color: blue;
+        color: white;
+      }
+      .dashboard .body .main .box3 {
+        width: 80%;
+        background-color: lightgray;
+        height: 100px;
+        margin-left: 10%;
+        box-shadow: 0 0 20px rgba(48, 47, 47, 0.15);
         margin-bottom: 10px;
       }
-
-      #popup-message {
-        margin-bottom: 20px;
+      .dashboard .body .main .box3 p {
+        padding-top: 20px;
+        margin-left: 10%;
+        font-size: 15px;
       }
-
-      #popup-close-btn {
-        background-color: #333;
-        color: #fff;
+      .dashboard .body .main .box3 button {
+        width: 120px;
+        margin-left: 10px;
+        height: 25px;
+        margin-left: 10%;
+        margin-top: 20px;
+        font-weight: bolder;
         border: none;
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
+        color: black;
+      }
+      .dashboard .body .main .box4 {
+        width: 80%;
+        margin-left: 10%;
+        box-shadow: 0 0 20px rgba(48, 47, 47, 0.15);
+        background-color: lightgray;
+        height: 100px;
+        margin-bottom: 10px;
+      }
+      .dashboard .body .main .box4 p {
+        padding-top: 20px;
+        margin-left: 10%;
+        font-size: 15px;
+      }
+      .dashboard .body .main .box4 button {
+        width: 120px;
+        margin-left: 10px;
+        height: 25px;
+        margin-left: 10%;
+        margin-top: 20px;
+        font-weight: bolder;
+        border: none;
+        color: black;
+      }
+      .dashboard .body .main .box5 {
+        width: 80%;
+        margin-left: 10%;
+        background-color: lightgray;
+        height: 100px;
+        box-shadow: 0 0 20px rgba(48, 47, 47, 0.15);
+        margin-bottom: 10px;
+      }
+      .dashboard .body .main .box5 p {
+        padding-top: 20px;
+        font-size: 15px;
+        margin-left: 10%;
+      }
+      .dashboard .body .main .box5 button {
+        width: 100px;
+        margin-left: 10px;
+        height: 25px;
+        margin-left: 10%;
+        margin-top: 20px;
+        font-weight: bolder;
+        border: none;
+        color: black;
+      }
+      .dashboard .body .main .box6 {
+        width: 80%;
+        margin-left: 10%;
+        background-color: lightgray;
+        height: 100px;
+        box-shadow: 0 0 20px rgba(48, 47, 47, 0.15);
+        margin-bottom: 10px;
+      }
+      .dashboard .body .main .box6 p {
+        padding-top: 20px;
+        margin-left: 10%;
+        font-size: 15px;
+      }
+      .dashboard .body .main .box6 button {
+        width: 100px;
+        margin-left: 10px;
+        height: 25px;
+        margin-left: 10%;
+        margin-top: 20px;
+        font-weight: bolder;
+        border: none;
+        color: black;
+      }
+      .dashboard .body .main .box7 {
+        width: 80%;
+        box-shadow: 0 0 20px rgba(48, 47, 47, 0.15);
+        background-color: lightgray;
+        height: 100px;
+        margin-left: 10%;
+        margin-bottom: 10px;
+      }
+      .dashboard .body .main .box7 p {
+        padding-top: 20px;
+        margin-left: 10%;
+        font-size: 15px;
+      }
+      .dashboard .body .main .box7 button {
+        width: 100px;
+        margin-left: 10px;
+        height: 25px;
+        margin-left: 10%;
+        margin-top: 20px;
+        font-weight: bolder;
+        border: none;
+        color: black;
+      }
+      .dashboard .body .main .box8 {
+        width: 80%;
+        margin-left: 10%;
+        background-color: lightgray;
+        height: 100px;
+        margin-bottom: 10px;
+        box-shadow: 0 0 20px rgba(48, 47, 47, 0.15);
+      }
+      .dashboard .body .main .box8 p {
+        padding-top: 20px;
+        font-size: 15px;
+        margin-left: 10%;
+      }
+      .dashboard .body .main .box8 button {
+        width: 100px;
+        margin-left: 10px;
+        height: 25px;
+        margin-left: 10%;
+        margin-top: 20px;
+        font-weight: bolder;
+        border: none;
+        color: black;
+      }
+      .dashboard .body .main a {
+        text-decoration: none;
+        color: black;
+        margin-left: 10%;
+        font-size: 15px;
       }
 
-      #popup-close-btn:hover {
-        background-color: #555;
+      @media only screen and (max-width: 768px) {
+        .dashboard {
+          flex-direction: column;
+        }
+        .dashboard .body .header {
+          flex-direction: column;
+        }
+        .dashboard .header {
+          margin-top: 0px;
+          width: 100%;
+        }
+        .dashboard .header .left {
+          margin-left: 0px;
+          width: 20%;
+        }
+        .dashboard .header .right {
+          margin-right: 0px;
+          width: 70%;
+        }
+        .dashboard .main {
+          width: 80%;
+        }
       }
     </style>
   </head>
   <body>
     <section class="dashboard">
       <div class="left">
-        <h3><img src="assets/images/bloom.png" alt="" />BloomPay Dashboard</h3>
+        <div class="image"><img src="assets/images/bloom.png" alt="" /></div>
         <div class="container">
-          <a href="" class="dash"
-            ><i class="fa-solid fa-house"></i> Dashboard</a
-          >
+          <a href="index.html"><i class="fa-solid fa-house"></i> Dashboard</a>
           <a href="users.html"><i class="fa-solid fa-users"></i> Users</a>
           <a href="Investment.html"
             ><i class="fa-solid fa-dollar-sign"></i>Investment</a
           >
-          <a href=""><i class="fa-solid fa-envelope"></i>Notification</a>
+          <a href="" class="dash"
+            ><i class="fa-solid fa-envelope"></i>Notification</a
+          >
         </div>
       </div>
       <div class="body">
         <div class="header">
-          <div class="left">
-            <p>Pages / <span>Dashboard</span></p>
-            <h4>DASHBOARD</h4>
-          </div>
           <div class="right">
             <input type="text" placeholder=" Type here.... " class="search" />
             <i class="bi bi-search"></i>
-            <a href="Login.html"><i class="bi bi-person-fill"></i> Sign In</a>
+            <a href="Login.html"><i class="bi bi-person-fill"></i> Sign Out</a>
             <i class="fa-solid fa-gear"></i>
             <i class="fa-solid fa-bell"></i>
           </div>
         </div>
-        <button id="open-dialogue-btn">Open Dialogue</button>
-        <div id="dialogue-box" class="dialogue-box">
-          <div class="dialogue-content">
-            <h2 id="dialogue-title">Dialogue Title</h2>
-            <p id="dialogue-message">This is a dialogue message.</p>
-            <button id="close-dialogue-btn">Close</button>
+        <div class="main">
+          <div class="box1">
+            <p>
+              User; Echindo has requested to upgrade her investment from Youth
+              to Parent
+            </p>
+            <button>Accept</button>
+            <button>Decline</button>
           </div>
-        </div>
-        <table id="customer-table">
-          <thead>
-            <tr>
-              <th>SN</th>
-              <th>Name</th>
-              <th>Date</th>
-              <th>Active</th>
-              <th>Amount</th>
-              <th>Completion</th>
-            </tr>
-          </thead>
-          <tbody id="table-body">
-            <!-- rows will be appended here -->
-          </tbody>
-        </table>
-
-        <!-- Popup container -->
-        <div id="popup-container" style="display: none">
-          <div id="popup-content">
-            <h2 id="popup-title"></h2>
-            <p id="popup-message"></p>
-            <button id="popup-close-btn">Close</button>
+          <div class="box2">
+            <p>A new user have joined the Bloom family</p>
+            <button>View Info</button>
           </div>
+          <div class="box3">
+            <p>
+              User; Echindo made a deposit of $3,000 for the subscription to the
+              Parent project
+            </p>
+            <button>View Details</button>
+          </div>
+          <div class="box4">
+            <p>
+              User; Echindo's phone number is different from that of the
+              registered bank details
+            </p>
+            <button>View Details</button>
+          </div>
+          <div class="box5">
+            <p>A new user have joined the Bloom family</p>
+            <button>View Info</button>
+          </div>
+          <div class="box6">
+            <p>
+              User; Echindo has requested to upgrade her investment from Youth
+              to Parent
+            </p>
+            <button>Accept</button>
+            <button>Decline</button>
+          </div>
+          <div class="box7">
+            <p>
+              User; Echindo made a deposit of $3,000 for the subscription to the
+              Parent project
+            </p>
+            <button>View Details</button>
+          </div>
+          <div class="box8">
+            <p>
+              User; Echindo made a deposit of $3,000 for the subscription to the
+              Parent project
+            </p>
+            <button>View Details</button>
+          </div>
+          <a href="">See more <i class="bi bi-chevron-down"></i> </a>
         </div>
       </div>
-      <script>
-        const openDialogueBtn = document.getElementById("open-dialogue-btn");
-        const dialogueBox = document.getElementById("dialogue-box");
-        const closeDialogueBtn = document.getElementById("close-dialogue-btn");
-
-        openDialogueBtn.addEventListener("click", () => {
-          dialogueBox.style.display = "block";
-        });
-
-        closeDialogueBtn.addEventListener("click", () => {
-          dialogueBox.style.display = "none";
-        });
-
-        document.getElementById("myTable").addEventListener("click", (e) => {
-          if (e.target.tagName === "TD") {
-            const row = e.target.parentNode;
-            const sn = row.cells[0].textContent;
-            const name = row.cells[1].textContent;
-            const date = row.cells[2].textContent;
-            const active = row.cells[3].textContent;
-            const amount = row.cells[4].textContent;
-            const completion = row.cells[5].textContent;
-
-            showPopup(
-              `Customer Details`,
-              `
-                    <p>SN: ${sn}</p>
-                    <p>Name: ${name}</p>
-                    <p>Date: ${date}</p>
-                    <p>Active: ${active}</p>
-                    <p>Amount: ${amount}</p>
-                    <p>Completion: ${completion}</p>
-              `
-            );
-          }
-        });
-
-        function showPopup(title, message) {
-          const popupContainer = document.getElementById("popup-container");
-          const popupContent = document.getElementById("popup-content");
-          const popupTitle = document.getElementById("popup-title");
-          const popupMessage = document.getElementById("popup-message");
-
-          popupTitle.textContent = title;
-          popupMessage.innerHTML = message;
-
-          popupContainer.style.display = "block";
-          popupContent.style.display = "block";
-
-          document
-            .getElementById("popup-close-btn")
-            .addEventListener("click", () => {
-              popupContainer.style.display = "none";
-              popupContent.style.display = "none";
-            });
-        }
-      </script>
     </section>
   </body>
 </html>

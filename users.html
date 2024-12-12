@@ -12,109 +12,214 @@
       rel="stylesheet"
       href="assets/lib/fontawesome-free-6.6.0-web/css/all.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      .card {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        height: auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        text-align: center;
+        border-radius: 8px;
+      }
+      .card .cardTitle {
+        height: 100px;
+      }
+      .card p{
+        line-height: 30px;
+        font-size: 15px;
+      }
+      .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+      }
+      .card button {
+        width: 50%;
+        border: none;
+        height: 35px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: white;
+        background-color: black;
+      }
+    </style>
   </head>
   <body>
     <section class="user">
       <div class="left">
-        <h3><img src="assets/images/bloom.png" alt="">BloomPay Dashboard</h3>
+        <div class="image">
+          <img src="assets/images/bloom.png" alt="">
+        </div>
         <div class="container">
           <a href="index.html"><i class="fa-solid fa-house"></i> Dashboard</a>
           <a href="" class="dash"><i class="fa-solid fa-users"></i> Users</a>
           <a href="Investment.html"><i class="fa-solid fa-dollar-sign"></i>Investment</a>
-          <a href=""><i class="fa-solid fa-envelope"></i>Notification</a>
+          <a href="dialogue.html"><i class="fa-solid fa-envelope"></i>Notification</a>
         </div>
       </div>
       <div class="body">
         <div class="header">
-          <div class="left">
-            <h2><i class="fa-solid fa-users"></i> USERS</h2>
-          </div>
           <div class="right">
             <input type="text" placeholder=" Type here.... " class="search" />
             <i class="bi bi-search"></i>
-            <a href="Login.html"><i class="bi bi-person-fill"></i> Sign In</a>
+            <a href="Login.html"><i class="bi bi-person-fill"></i> Sign Out</a>
             <i class="fa-solid fa-gear"></i>
             <i class="fa-solid fa-bell"></i>
           </div>
         </div>
         <div class="main">
-          <table class="users">
+          <table class="users" id="myTable">
             <thead>
               <tr>
                 <th>S/N</th>
+                <th></th>
                <th>Name</th>
                <th>Email</th>
                <th>Phone Number</th>
                <th>Created Date</th>
+               <th>Project</th>
                </tr>
             </thead>
+            <tbody >
+              <!-- Rows will be dynamically inserted here -->
+            </tbody>
             <tbody>
-             <tr>
-               <td>1</td>
-               <td>Echindo Saate</td>
-               <td>saateechindo@gmail.com</td>
-               <td>07056810512</td>
-               <td>12th, October</td>
-             </tr>
-             <tr>
-               <td>2</td>
-               <td>Echindo Saate</td>
-               <td>saateechindo@gmail.com</td>
-               <td>07056810512</td>
-               <td>12th, October</td>
-              </tr>
-              <tr>
-                <td>3</td>
-               <td>Echindo Saate</td>
-               <td>saateechindo@gmail.com</td>
-               <td>07056810512</td>
-               <td>12th, October</td>
-             </tr>
-             <tr>
-               <td>4</td>
-               <td>Echindo Saate</td>
-               <td>saateechindo@gmail.com</td>
-               <td>07056810512</td>
-               <td>12th, October</td>
-              </tr>
-             <tr>
-               <td>5</td>
-               <td>Echindo Saate</td>
-               <td>saateechindo@gmail.com</td>
-               <td>07056810512</td>
-               <td>12th, October</td>
-             </tr>
-             <tr>
-               <td>6</td>
-               <td>Echindo Saate</td>
-               <td>saateechindo@gmail.com</td>
-               <td>07056810512</td>
-               <td>12th, October</td>
-             </tr>
-             <tr>
-               <td>7</td>
-               <td>Echindo Saate</td>
-               <td>saateechindo@gmail.com</td>
-               <td>07056810512</td>
-               <td>12th, October</td>
-             </tr>
-             <tr>
-               <td>8</td>
-               <td>Echindo Saate</td>
-               <td>saateechindo@gmail.com</td>
-               <td>07056810512</td>
-               <td>12th, October</td>
-             </tr>
-             <tr>
-               <td>9</td>
-               <td>Echindo Saate</td>
-               <td>saateechindo@gmail.com</td>
-               <td>07056810512</td>
-               <td>12th, October</td>
-             </tr>
-          </tbody>
+             
           </table>
+          <div class="overlay" id="overlay"></div>
+          <div class="card" id="card">
+            <h2 id="cardTitle">Details</h2>
+            <p id="cardContent"></p>
+            <button>Block User</button>
+            <button onclick="closeCard()">Close</button>
+          </div>
         </div>
+        <script>
+           var data = [
+          {
+            sn: "1",
+            image:"file:///C:/Users/user/OneDrive/Desktop/Internship/assets/images/image%202.png",
+            name: "Echindo Saate",
+            email: "saateechindo@gmail.com",
+            phone: "07021498512",
+            date: "11-08-2024",
+            project: "Parent",
+          },
+          {
+            sn: "2",
+            image:"file:///C:/Users/user/OneDrive/Desktop/Internship/assets/images/image%203.png",
+            name: "Echindo Saate",
+            email: "saateechindo@gmail.com",
+            phone: "07021498512",
+            date: "11-08-2024",
+            project: "Youth",
+          },
+          {
+            sn: "3",
+            image:"file:///C:/Users/user/OneDrive/Desktop/Internship/assets/images/image%204.png",
+            name: "Echindo Saate",
+            email: "saateechindo@gmail.com",
+            phone: "07021498512",
+            date: "11-08-2024",
+            project: "Child",
+          },
+          {
+            sn: "4",
+            image:"file:///C:/Users/user/OneDrive/Desktop/Internship/assets/images/image%205.png",
+            name: "Echindo Saate",
+            email: "saateechindo@gmail.com",
+            phone: "07021498512",
+            date: "11-08-2024",
+            project: "Parent",
+          },
+          {
+            sn: "5",
+            image:"file:///C:/Users/user/OneDrive/Desktop/Internship/assets/images/image%206.png",
+            name: "Echindo Saate",
+            email: "saateechindo@gmail.com",
+            phone: "07021498512",
+            date: "11-08-2024",
+            project: "Youth",
+          },
+          {
+            sn: "6",
+            image:"file:///C:/Users/user/OneDrive/Desktop/Internship/assets/images/image.png",
+            name: "Echindo Saate",
+            email: "saateechindo@gmail.com",
+            phone: "07021498512",
+            date: "11-08-2024",
+            project: "Parent",
+          },
+        ];
+
+        // Reference to the table body and card elements
+        const tableBody = document.querySelector("#myTable tbody");
+        const card = document.getElementById("card");
+        const overlay = document.getElementById("overlay");
+        const cardTitle = document.getElementById("cardTitle");
+        const cardContent = document.getElementById("cardContent");
+
+        // Function to populate the table with rows
+        function populateTable(data) {
+          data.forEach((item, index) => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+              <td>${item.sn}</td>
+              <td><img src="${item.image}" alt="User Image" width="50" height="50"></td>
+              <td><a href="#" onclick="openModal(${data})" style="color: black; text-decoration: none;">${item.name}</td>
+              <td>${item.email}</td>
+              <td>${item.phone}</td>
+              <td>${item.date}</td>
+              <td>${item.project}</td>
+              
+     `;
+            row.addEventListener("click", () => showCard(item)); // Add click event listener
+          tableBody.appendChild(row);
+        });
+      }
+
+
+        // Function to show the card with details
+        function showCard(data) {
+          cardTitle.innerHTML = `<img src="${data.image}" alt="User Image" width="100" height="100">`;
+        cardContent.innerHTML = `
+   <div class="card-item">Name: ${data.name}</div>
+  <div class="card-item">Email: ${data.email}</div>
+  <div class="card-item">Phone number: ${data.phone}</div>
+  <div class="card-item">Date of Creation: ${data.date}</div>
+  <div class="card-item">Project: ${data.project}</div>
+`;
+          card.style.display = "block";
+          overlay.style.display = "block";
+        }
+
+        // Function to close the card
+        function closeCard() {
+          card.style.display = "none";
+          overlay.style.display = "none";
+        }
+
+        // Populate the table on page load
+        populateTable(data);
+        </script>
     </section>
   </body>
 </html>

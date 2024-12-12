@@ -169,3 +169,37 @@ button {
   font-size: 13px;
   color: gray;
 }
+
+@media only screen and (max-width: 768px) {
+  .signin {
+    height: 1200px;
+  }
+  .signin .container .parent {
+    height: 60%;
+  }
+  .signin .container .parent .header {
+    flex-direction: column;
+  }
+  .signin .container .parent .header .first {
+    width: 100%;
+    margin-left: 0;
+  }
+  .signin .container .parent .header .second {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .signin .container .midd {
+    width: 80%;
+    left: 10%;
+    bottom: -70%;
+  }
+  .signin .container .midd form input {
+    width: 80%;
+  }
+  .signin .container .midd form button {
+    width: 80%;
+  }
+  .foot {
+    margin-top: 50px;
+  }
+}
