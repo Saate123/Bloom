@@ -155,11 +155,13 @@
 }
 .invest .main .users tbody tr {
   border-bottom: 1px solid #ddd;
-  color: green;
+  color: black;
 }
-.invest .main .users tbody .inactive {
-  color: red;
-  font-weight: lighter;
+.invest .main .users tbody tr:nth-of-type(odd) {
+  background-color: #f5f6f8;
+}
+.invest .main .users tbody tr:nth-of-type(even) {
+  background-color: #fff;
 }
 .invest .main .users tbody tr:last-of-type {
   border-bottom: 3px solid black;
