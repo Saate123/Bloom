@@ -121,7 +121,7 @@
 .user .body .main .users {
   width: 95%;
   border-collapse: collapse;
-  margin: 30px;
+  margin-left: 70px;
   font-size: 15px;
   border-radius: 10px 10px 0 0;
   background-color: #fff;
@@ -149,7 +149,7 @@
   border-bottom: 1px solid #ddd;
 }
 .user .users tbody tr:nth-last-of-type(even) {
-  background-color: lightgray;
+  background-color: #f5f6f8;
 }
 .user .users tbody tr:last-of-type {
   border-bottom: 3px solid black;

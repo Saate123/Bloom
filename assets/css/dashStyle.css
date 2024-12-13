@@ -332,7 +332,7 @@
   font-weight: bold;
 }
 .dashboard .body .project .project-tab tbody tr:nth-of-type(odd) {
-  background-color: lightgray;
+  background-color: #f5f6f8;
 }
 .dashboard .body .project .project-tab tbody tr:last-of-type {
   border-bottom: 3px solid black;
