@@ -2,7 +2,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BloomPay Dashboard</title>
+    <title>Bloom Log In</title>
     <link
       rel="stylesheet"
       href="assets/lib/bootstrap-icons-1.3.0/bootstrap-icons.css"
@@ -11,258 +11,70 @@
       rel="stylesheet"
       href="assets/lib/fontawesome-free-6.6.0-web/css/all.css"
     />
-    <link rel="stylesheet" href="assets/css/dashStyle.css" />
-    <script src="https://www.gstatic.com/charts/loader.js"></script>
-    <!-- <script src="https://ajax.googlapis.com/ajax/libs/jquery/3.3.1/jquery.mim.js"></script> -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-
-    <style>
-      .card {
-        display: none;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 400px;
-        padding: 20px;
-        background-color: #fff;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        z-index: 1000;
-        text-align: center;
-        border-radius: 8px;
-      }
-      .card h2 {
-        margin-top: 0;
-        height: 60px;
-        margin-bottom: 10px;
-        padding-top: 20px;
-        padding-bottom: 10px;
-        font-size: 18px;
-        width: 100%;
-        background-color: gray;
-      }
-      .card p {
-        line-height: 30px;
-      }
-      .overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 999;
-      }
-      .card button {
-        margin-top: 10px;
-        width: 30%;
-        border: none;
-        height: 35px;
-        color: #fff;
-        background-color: black;
-      }
-    </style>
+    <link rel="stylesheet" href="assets/css/login Style.css" />
   </head>
   <body>
-    <section class="dashboard">
-      <div class="left">
+    <section class="login">
+      <div class="header">
         <div class="image">
-          <img src="assets/images/bloom.png" alt="" />
-        </div>
-        <div class="container">
-          <a href="" class="dash"
-            ><i class="fa-solid fa-house"></i> Dashboard</a
-          >
-          <a href="users.html"><i class="fa-solid fa-users"></i> Users</a>
-          <a href="Investment.html"
-            ><i class="fa-solid fa-dollar-sign"></i>Investment</a
-          >
-          <a href="dialogue.html"
-            ><i class="fa-solid fa-envelope"></i>Notification</a
-          >
+          <img src="assets/images/bloom1.png" alt="" />
         </div>
       </div>
-      <div class="body">
-        <div class="header">
-          <div class="first">
-            <p>Pages / <span>Dashboard</span></p>
-          </div>
-          <div class="right">
-            <input type="text" placeholder=" Type here.... " class="search" />
-            <i class="bi bi-search"></i>
-            <a href="Login.html"><i class="bi bi-person-fill"></i> Sign Out</a>
-            <i class="fa-solid fa-gear"></i>
-            <i class="fa-solid fa-bell"></i>
-          </div>
+      <div class="parent">
+        <div class="main">
+          <h3>Welcome Back!</h3>
         </div>
-        <div class="main" id="blur">
-          <div class="number">
-            <p>Number Of Investment<i class="fa-solid fa-seedling"></i></p>
-            <h3>250,000 <span>+1%</span></h3>
-          </div>
-          <div class="user">
-            <p>Users<i class="fa-solid fa-globe"></i></p>
-            <h3>5,000 <span>+10%</span></h3>
-          </div>
-          <div class="plan">
-            <p>Investment Plans<i class="fa-solid fa-clipboard-list"></i></p>
-            <button class="child">Parents</button>
-            <button>Youth</button>
-            <button>Children</button>
-          </div>
+        <div class="formContainer">
+          <form id="sign-inPage">
+            <p class="enter">Enter your email and password to sign in</p>
+            <label for="email">Email</label><br />
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="Enter your email address"
+            /><br />
+            <label for="password">Password</label><br />
+            <input
+              type="text"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+            />
+            <div class="note">
+              <input type="checkbox" name="" id="check" />
+              <p>Remember me</p>
+            </div>
+            <button type="submit">SIGN IN</button>
+          </form>
+          <p class="sign">
+            Don't have an account? <a href="Signin.html">Sign Up</a>
+          </p>
         </div>
-        <div class="box">
-          <div class="small-box1">
-            <div
-              id="myChart"
-              style="width: 100%; max-width: 600px; height: 400px"
-            ></div>
-          </div>
-          <div class="small-box">
-            <h1>BLOOMPAY</h1>
-          </div>
-        </div>
-        <div class="project">
-          <h2>Projects</h2>
-          <table id="dataTable" class="project-tab">
-            <thead>
-              <tr>
-                <th>S/N</th>
-                <th>Name</th>
-                <th>Date</th>
-                <th>Active Investors</th>
-                <th>Amount</th>
-                <th>Completion</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- Rows will be dynamically inserted here -->
-            </tbody>
-          </table>
-
-          <div class="overlay" id="overlay"></div>
-          <div class="card" id="card">
-            <h2 id="cardTitle">Details</h2>
-            <p id="cardContent"></p>
-            <button onclick="closeCard()">Close</button>
-          </div>
+        <div class="foot">
+          <p>@2024</p>
         </div>
       </div>
-
       <script>
-        google.charts.load("current", { packages: ["corechart"] });
-        google.charts.setOnLoadCallback(drawChart);
+        const form = document.getElementById("sign-inPage");
+        const formholder = document.getElementById("formcontainer");
+        const displayEmail = document.getElementById("displayEmail");
+        const displayPassword = document.getElementById("displayPassword");
 
-        function drawChart() {
-          // Set Data - Months are now strings representing the month names
-          const data = google.visualization.arrayToDataTable([
-            ["Month", "Percentage"],
-            ["Jan", 55],
-            ["Feb", 49],
-            ["Mar", 44],
-            ["Apr", 60],
-            ["May", 65],
-            ["Jun", 70],
-            ["Jul", 60],
-          ]);
+        form.addEventListener("submit", async (event) => {
+          event.preventDefault();
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+          // location.replace("index.html");
 
-          // Set Options
-          const options = {
-            title: "Monthly Investment Percentage",
-          };
-
-          // Draw
-          const chart = new google.visualization.BarChart(
-            document.getElementById("myChart")
-          );
-          chart.draw(data, options);
-        }
-
-        const data = [
-          {
-            sn: "1",
-            name: "Parent",
-            date: "10/11/2024",
-            active: "1,500",
-            amount: "$3,000",
-            completion: "70%",
-          },
-          {
-            sn: "2",
-            name: "Youth",
-            date: "10/11/2024",
-            active: "1,000",
-            amount: "$2,000",
-            completion: "50%",
-          },
-          {
-            sn: "3",
-            name: "Child",
-            date: "10/11/2024",
-            active: "500",
-            amount: "$1,500",
-            completion: "30%",
-          },
-        ];
-
-        // Reference to the table body and card elements
-        const tableBody = document.querySelector("#dataTable tbody");
-        const card = document.getElementById("card");
-        const overlay = document.getElementById("overlay");
-        const cardTitle = document.getElementById("cardTitle");
-        const cardContent = document.getElementById("cardContent");
-
-        // Function to populate the table with rows
-        function populateTable(dataArray) {
-          dataArray.forEach((item, index) => {
-            const row = document.createElement("tr");
-            row.innerHTML = `
-              <td>${item.sn}</td>
-              <td><a href="#" onclick="openModal(${data})" style="color: black; text-decoration: none;">${item.name}</td>
-              <td>${item.date}</td>
-              <td>${item.active}</td>
-              <td>${item.amount}</td>
-              <td>${item.completion}</td>
-              
-`;
-            row.addEventListener("click", () => showCard(item)); // Add click event listener
-            tableBody.appendChild(row);
-          });
-        }
-
-        // Function to show the card with details
-        function showCard(data) {
-          cardTitle.textContent = data.name;
-          cardContent.innerHTML = `
-            <div class="card-item" id="displayemail">Date of Creation: ${data.date}</div>
-            <div class="card-item" id="displayPhone">
-              Number of Active Users: ${data.active}
-            </div>
-            <div class="card-item" id="displayGender">
-              Cost of Project: ${data.amount}
-            </div>
-            <div class="card-item" id="displayGender">
-              Percentage of Complete: ${data.completion}
-            </div>
-`;
-          card.style.display = "block";
-          overlay.style.display = "block";
-        }
-
-        // Function to close the card
-        function closeCard() {
-          card.style.display = "none";
-          overlay.style.display = "none";
-        }
-
-        // Populate the table on page load
-        populateTable(data);
+          if (!email || !password) {
+            alert("Please enter both email and password.");
+            return false;
+          } else {
+            location.replace("dashboard.html");
+          }
+          // location.replace("index.html");
+        });
       </script>
     </section>
   </body>
