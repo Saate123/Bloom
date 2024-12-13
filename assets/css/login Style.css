@@ -5,165 +5,115 @@
 }
 .login {
   width: 100%;
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
+  height: auto;
+  background-color: #f5f6f8;
 }
 .login .header {
-  width: 80%;
-  height: 80px;
-  position: absolute;
-  background-color: #fefefe;
-  opacity: 0.9;
+  width: 100%;
+  height: 100px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-left: 10%;
-  margin-top: 30px;
-  border-radius: 30px;
+  justify-content: center;
 }
-.login .header .first {
+.login .header .image {
   width: 30%;
-  margin-left: 20px;
+  height: 100%;
+  position: relative;
+  bottom: 60%;
 }
-.login .header h2 {
-  font-size: 20px;
-}
-.login .header h2 img {
-  width: 10%;
-  height: fit-content;
-}
-.login .header .second {
-  width: 65%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.login .header .free {
-  margin-right: 20px;
-  width: 15%;
-  height: 40px;
-  background-image: linear-gradient(
-    to left,
-    rgb(48, 52, 78),
-    rgb(77, 37, 58),
-    rgb(21, 25, 41)
-  );
-  color: #fff;
-  font-weight: bolder;
-  border-radius: 20px;
-}
-.login .header a {
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
-  color: rgb(34, 44, 80);
-}
-.login .header a i {
-  margin-right: 5px;
+.login .header .image img {
+  width: 100%;
 }
 .login .parent {
-  width: 100%;
-  height: 100%;
   display: flex;
-  flex-wrap: wrap;
-}
-.login .parent .left {
-  width: 70%;
-  height: 90%;
-  background-color: #fff;
-  border-bottom-right-radius: 15px;
-  display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 10%;
 }
-.login .parent .left h3 {
-  width: 50%;
-  margin-left: 0%;
-  margin-bottom: 10px;
-  font-size: 35px;
-  margin-top: 15%;
-  color: rgb(181, 9, 161);
-}
-.login .parent .left .enter {
-  width: 70%;
-  color: grey;
-  font-weight: 600;
-  margin-left: 20%;
-  margin-bottom: 10px;
-}
-.login .parent .left form {
-  width: 70%;
-  margin-left: 20%;
-  margin-bottom: 20px;
-}
-.login .parent .left form label {
-  line-height: 30px;
-  color: rgb(21, 25, 41);
-  font-weight: bolder;
-}
-.login .parent .left form input {
-  margin-bottom: 20px;
-  width: 55%;
-  height: 40px;
-  padding-left: 20px;
-  border: 1px solid grey;
-  border-radius: 10px;
-}
-.login .parent .left form .note {
+.login .parent .main {
   width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
-
-.login .parent .left form .note p {
-  display: flex;
-  align-items: center;
+.login .parent .main h3 {
+  color: rgb(87, 16, 16);
+  font-weight: lighter;
+}
+.login .parent .formContainer {
+  width: 30%;
+  height: auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  margin-bottom: 30px;
+}
+.login .parent .formContainer .enter {
   font-size: 15px;
-  padding-bottom: 20px;
+  margin-left: 20px;
   color: gray;
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
-
-.login .parent .left form .note #check {
+.login .parent .formContainer label {
+  margin-left: 20px;
+  line-height: 35px;
+  color: gray;
+  font-size: 15px;
+}
+.login .parent .formContainer input {
+  margin-left: 20px;
+  width: 90%;
+  height: 40px;
+  border-radius: 8px;
+  padding-left: 10px;
+}
+.login .parent .formContainer .note {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.login .parent .formContainer .note #check {
   width: 15px;
-  height: 15px;
   margin-right: 10px;
 }
-.login .parent .left form button {
-  width: 55%;
+.login .parent .formContainer .note p {
+  font-size: 15px;
+  color: gray;
+  font-weight: 600;
+}
+.login .parent .formContainer button {
+  margin-left: 20px;
+  width: 90%;
   height: 40px;
-  border-radius: 10px;
-  background-color: rgb(181, 9, 161);
+  background-color: rgb(87, 16, 16);
   color: white;
   border: none;
+  border-radius: 10px;
+  margin-bottom: 20px;
 }
-.login .parent .left .sign {
-  margin-right: 13%;
-  color: grey;
+.login .parent .formContainer .sign {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  color: gray;
 }
-.login .parent .left .sign a {
+.login .parent .formContainer .sign a {
   text-decoration: none;
-  font-weight: 600;
-  color: rgb(181, 9, 161);
+  font-weight: bolder;
+  font-size: 15px;
+  color: gray;
 }
-.login .parent .right {
-  width: 30%;
-  background-image: linear-gradient(
-    to right,
-    rgb(224, 92, 218),
-    rgb(187, 0, 178),
-    rgb(181, 9, 161)
-  );
-  border-bottom-left-radius: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.login .parent .right .container {
-  font-size: 35px;
-  color: #fff;
+.login .parent .foot {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  font-weight: bold;
+  color: grey;
+  text-align: left;
+  padding-left: 40px;
 }
 
 /* Media Query for Mobile Devices */
