@@ -36,7 +36,7 @@
   margin-bottom: 20px;
 }
 .login .parent .main h3 {
-  color: rgb(87, 16, 16);
+  color: black;
   font-weight: lighter;
 }
 .login .parent .formContainer {
@@ -87,7 +87,7 @@
   margin-left: 20px;
   width: 90%;
   height: 40px;
-  background-color: rgb(87, 16, 16);
+  background-color: black;
   color: white;
   border: none;
   border-radius: 10px;
