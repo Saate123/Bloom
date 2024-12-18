@@ -156,6 +156,74 @@
   border-bottom: 3px solid black;
 }
 
+@media only screen and (max-width: 480px) {
+  .user .left {
+    width: 100%;
+    height: auto;
+  }
+  .user .left .image {
+    margin-bottom: 10%;
+    margin-right: 30%;
+    width: 40%;
+  }
+  .user .left .container a {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  .user .body {
+    width: 100%;
+  }
+  .user .body .header {
+    flex-direction: row;
+  }
+  .user .body .header .right {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 20px;
+  }
+  .user .body .header .right .search {
+    width: 30%;
+  }
+  .user .body .main .users {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .user .left {
+    width: 100%;
+    height: auto;
+  }
+  .user .left .image {
+    margin-bottom: 10%;
+    margin-right: 20%;
+    width: 60%;
+  }
+  .user .left .container a {
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+  .user .body {
+    width: 100%;
+  }
+  .user .body .header {
+    flex-direction: row;
+  }
+  .user .body .header .right {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 20px;
+  }
+  .user .body .header .right .search {
+    width: 30%;
+  }
+  .user .body .main .users {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .user {
     flex-direction: column;
