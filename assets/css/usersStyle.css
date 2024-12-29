@@ -86,18 +86,14 @@
 }
 .user .body .header {
   width: 100%;
-  height: 120px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
 }
 .user .body .header .right {
-  margin-left: 30%;
   margin-top: 50px;
+  padding-left: 40%;
 }
 .user .body .header .right .search {
-  width: 400px;
-  height: 40px;
+  width: 350px;
+  height: 39px;
   border-radius: 15px;
   background-color: #fff;
   color: rgb(1, 1, 1);
@@ -106,7 +102,7 @@
 }
 .user .body .header .right .bi-search {
   position: relative;
-  right: 390px;
+  right: 340px;
 }
 .user .body .header .right a {
   margin-right: 20px;

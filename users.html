@@ -219,6 +219,13 @@
 
         // Populate the table on page load
         populateTable(data);
+
+        const searchInput = document.querySelector(".search");
+        const searchIcon = document.querySelector(".bi-search");
+
+        searchInput.addEventListener("click", () => {
+          searchIcon.style.display = "none";
+        });
         </script>
     </section>
   </body>

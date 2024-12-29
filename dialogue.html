@@ -120,7 +120,7 @@
       }
       .dashboard .body .header .right .bi-search {
         position: relative;
-        right: 240px;
+        right: 370px;
       }
       .dashboard .body .header .right a {
         margin-right: 20px;
@@ -444,6 +444,14 @@
           <a href="">See more <i class="bi bi-chevron-down"></i> </a>
         </div>
       </div>
+      <script>
+        const searchInput = document.querySelector(".search");
+        const searchIcon = document.querySelector(".bi-search");
+
+        searchInput.addEventListener("click", () => {
+          searchIcon.style.display = "none";
+        });
+      </script>
     </section>
   </body>
 </html>

@@ -84,15 +84,6 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.invest .body .header .left {
-  margin-left: 10px;
-  margin-top: 40px;
-}
-.invest .body .header .left h2 {
-  width: 100%;
-  margin-left: 30px;
-  color: black;
-}
 .invest .body .header .right {
   margin-right: 5%;
   margin-top: 40px;
